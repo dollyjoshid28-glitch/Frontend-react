@@ -18,7 +18,7 @@ const useHotelName = (initialHotelName, roomId) => {
 
     async function loadHotel() {
       try {
-        const res = await fetch(`http://127.0.0.1:5050/hotel-by-room/${roomId}`);
+        const res = await fetch(`https://backend-hotel-25mu.onrender.com/hotel-by-room/${roomId}`);
         const data = await res.json();
         if (data.success && data.hotelName) {
           setHotelName(data.hotelName);
@@ -53,7 +53,7 @@ export default function MyBookings() {
 
     const fetchBookings = async () => {
       try {
-        const res = await fetch(`http://127.0.0.1:5050/mybookings/${user._id}`);
+        const res = await fetch(`https://backend-hotel-25mu.onrender.com/mybookings/${user._id}`);
         const data = await res.json();
 
         if (data.success) {
@@ -61,14 +61,14 @@ export default function MyBookings() {
 
           data.bookings.forEach(async (b) => {
             // Fetch feedbacks
-            const fbRes = await fetch(`http://127.0.0.1:5050/feedback/${b._id}`);
+            const fbRes = await fetch(`https://backend-hotel-25mu.onrender.com/feedback/${b._id}`);
             const fbData = await fbRes.json();
             if (fbData.success) {
               setFeedbacks((prev) => ({ ...prev, [b._id]: fbData.feedback }));
             }
             // Fetch bills
             try {
-              const billRes = await fetch(`http://127.0.0.1:5050/bill/by-booking/${b._id}`);
+              const billRes = await fetch(`https://backend-hotel-25mu.onrender.com/bill/by-booking/${b._id}`);
               const billData = await billRes.json();
               if (billData.success && billData.bill) {
                 setBills((prev) => ({ ...prev, [b._id]: billData.bill }));
@@ -97,7 +97,7 @@ export default function MyBookings() {
     if (!window.confirm(`Cancel booking for ${hotelName}?`)) return;
 
     try {
-      const res = await fetch(`http://127.0.0.1:5050/cancel-booking/${bookingId}`, {
+      const res = await fetch(`https://backend-hotel-25mu.onrender.com/cancel-booking/${bookingId}`, {
         method: "PUT",
       });
       const data = await res.json();
@@ -130,7 +130,7 @@ export default function MyBookings() {
   const handleSubmitFeedback = async () => {
     if (!rating || !comment) return alert("Please provide rating & comment.");
 
-    const res = await fetch("http://127.0.0.1:5050/add-feedback", {
+    const res = await fetch("https://backend-hotel-25mu.onrender.com/add-feedback", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -155,7 +155,7 @@ export default function MyBookings() {
   const handleDeleteFeedback = async (feedbackId, bookingId) => {
     if (!window.confirm("Delete this feedback?")) return;
 
-    const res = await fetch(`http://127.0.0.1:5050/feedback/${feedbackId}`, {
+    const res = await fetch(`https://backend-hotel-25mu.onrender.com/feedback/${feedbackId}`, {
       method: "DELETE",
     });
     const data = await res.json();

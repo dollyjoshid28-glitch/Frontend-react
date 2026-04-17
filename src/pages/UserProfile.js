@@ -41,7 +41,7 @@ const [activeTab, setActiveTab] = useState("profile");
   useEffect(() => {
     if (!user?._id) return;
 
-    fetch("http://127.0.0.1:5050/user-bookings/" + user._id)
+    fetch("https://backend-hotel-25mu.onrender.com/user-bookings/" + user._id)
       .then((res) => res.json())
       .then((data) => {
         console.log("📌 user-bookings response:", data); // Debug
@@ -94,7 +94,7 @@ const [activeTab, setActiveTab] = useState("profile");
 
   // ⭐ UPDATED handleSave – frontend-only update, no backend change needed
   const handleSave = async () => {
-    const res = await fetch("http://127.0.0.1:5050/update-user/" + user._id, {
+    const res = await fetch("https://backend-hotel-25mu.onrender.com/update-user/" + user._id, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),

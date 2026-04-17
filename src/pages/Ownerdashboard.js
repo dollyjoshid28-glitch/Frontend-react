@@ -19,7 +19,7 @@ export default function OwnerDashboard() {
       if (!billId) return console.error("❌ Missing bill ID");
 
       const res = await fetch(
-        `http://127.0.0.1:5050/update-bill-payment/${billId}`,
+        `https://backend-hotel-25mu.onrender.com/update-bill-payment/${billId}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -46,7 +46,7 @@ export default function OwnerDashboard() {
     const fetchHotels = async () => {
       try {
         const res = await fetch(
-          `http://127.0.0.1:5050/owner-hotels/${encodeURIComponent(
+          `https://backend-hotel-25mu.onrender.com/owner-hotels/${encodeURIComponent(
             owner.email
           )}`
         );
@@ -67,7 +67,7 @@ export default function OwnerDashboard() {
   // ✅ Fetch Rooms for each hotel
   const fetchRooms = async (hotelid) => {
     try {
-      const res = await fetch(`http://127.0.0.1:5050/rooms/${hotelid}`);
+      const res = await fetch(`https://backend-hotel-25mu.onrender.com/rooms/${hotelid}`);
       const data = await res.json();
       if (Array.isArray(data))
         setRooms((prev) => ({ ...prev, [hotelid]: data }));
@@ -81,7 +81,7 @@ export default function OwnerDashboard() {
     const fetchBookings = async () => {
       try {
         const res = await fetch(
-          `http://127.0.0.1:5050/owner-bookings/${encodeURIComponent(
+          `https://backend-hotel-25mu.onrender.com/owner-bookings/${encodeURIComponent(
             owner.email
           )}`
         );
@@ -110,7 +110,7 @@ export default function OwnerDashboard() {
   const handleSave = async () => {
     try {
       const res = await fetch(
-        `http://127.0.0.1:5050/update-hotel/${editingHotel._id}`,
+        `https://backend-hotel-25mu.onrender.com/update-hotel/${editingHotel._id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -150,7 +150,7 @@ export default function OwnerDashboard() {
   const handleRoomSave = async () => {
     try {
       const res = await fetch(
-        `http://127.0.0.1:5050/update-room/${editingRoom._id}`,
+        `https://backend-hotel-25mu.onrender.com/update-room/${editingRoom._id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -179,7 +179,7 @@ export default function OwnerDashboard() {
     if (!window.confirm("Delete this room?")) return;
     try {
       const res = await fetch(
-        `http://127.0.0.1:5050/delete-room/${roomId}`,
+        `https://backend-hotel-25mu.onrender.com/delete-room/${roomId}`,
         { method: "DELETE" }
       );
       const data = await res.json();
@@ -211,7 +211,7 @@ export default function OwnerDashboard() {
   const handleAddRoomSave = async () => {
     try {
       const newRoom = { ...formData, hotelId: addingRoomHotel.hotelid };
-      const res = await fetch("http://127.0.0.1:5050/add-room", {
+      const res = await fetch("https://backend-hotel-25mu.onrender.com/add-room", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newRoom),

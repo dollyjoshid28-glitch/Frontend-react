@@ -19,7 +19,7 @@ export default function Login({ onSwitchToRegister, updateRole }) {
     try {
       const cleanEmail = email.trim().toLowerCase();
 
-      const response = await fetch("http://127.0.0.1:5050/login", {
+      const response = await fetch("https://backend-hotel-25mu.onrender.com/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: cleanEmail, password, role }),

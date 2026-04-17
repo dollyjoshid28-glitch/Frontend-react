@@ -28,7 +28,7 @@ const [reportData, setReportData] = useState(null);
 
   const fetchHotels = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:5050/hotels");
+      const res = await fetch("https://backend-hotel-25mu.onrender.com/hotels");
       const data = await res.json();
       if (Array.isArray(data)) setHotels(data);
       return data;
@@ -41,7 +41,7 @@ const [reportData, setReportData] = useState(null);
   const fetchUsers = async () => {
     try {
       // NOTE: Assuming your backend has an endpoint to fetch all users
-      const res = await fetch("http://127.0.0.1:5050/users"); 
+      const res = await fetch("https://backend-hotel-25mu.onrender.com/users"); 
       const data = await res.json();
       if (Array.isArray(data)) setUsers(data);
       return data;
@@ -53,7 +53,7 @@ const [reportData, setReportData] = useState(null);
 
   const fetchReports = async () => {
   try {
-    const res = await fetch("http://127.0.0.1:5050/admin-reports");
+    const res = await fetch("https://backend-hotel-25mu.onrender.com/admin-reports");
     const data = await res.json();
     if (data.success) setReportData(data);
   } catch (err) {
@@ -119,7 +119,7 @@ const [reportData, setReportData] = useState(null);
 
   console.log("🧹 Deleting hotel:", id);
   try {
-    const res = await fetch(`http://127.0.0.1:5050/delete-hotel/${id}`, {
+    const res = await fetch(`https://backend-hotel-25mu.onrender.com/delete-hotel/${id}`, {
       method: "DELETE",
     });
 
@@ -159,7 +159,7 @@ const [reportData, setReportData] = useState(null);
     if (!editingHotel) return;
     try {
       const res = await fetch(
-        `http://127.0.0.1:5050/update-hotel/${editingHotel._id}`,
+        `https://backend-hotel-25mu.onrender.com/update-hotel/${editingHotel._id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -189,7 +189,7 @@ const [reportData, setReportData] = useState(null);
     if (!window.confirm("Are you sure you want to delete this user?")) return;
     try {
       // NOTE: Assuming your backend has a user delete endpoint
-      const res = await fetch(`http://127.0.0.1:5050/delete-user/${id}`, { method: "DELETE" }); 
+      const res = await fetch(`https://backend-hotel-25mu.onrender.com/delete-user/${id}`, { method: "DELETE" }); 
       const data = await res.json();
       if (data.success) {
         alert("User deleted successfully!");
@@ -217,7 +217,7 @@ const handleEditUser = (user) => {
     try {
       // NOTE: Assuming your backend has a user update endpoint
       const res = await fetch(
-        `http://127.0.0.1:5050/update-user/${editingUser._id}`,
+        `https://backend-hotel-25mu.onrender.com/update-user/${editingUser._id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -802,7 +802,7 @@ const renderReports = () => {
                 style={btnSave}
              onClick={async () => {
   try {
-    const res = await fetch("http://127.0.0.1:5050/add-hotel", {
+    const res = await fetch("https://backend-hotel-25mu.onrender.com/add-hotel", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

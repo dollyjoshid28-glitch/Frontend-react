@@ -8,7 +8,7 @@ export default function HotelList() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5050/hotels")
+    fetch("https://backend-hotel-25mu.onrender.com/hotels")
       .then((res) => res.json())
       .then((data) => setHotels(data))
       .catch((err) => console.error("Error fetching hotels:", err));

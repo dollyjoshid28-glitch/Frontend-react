@@ -16,7 +16,7 @@ export default function BookingFormModal({ room, checkIn, checkOut, numRooms, on
   useEffect(() => {
     const fetchHotelName = async () => {
       try {
-        const res = await fetch(`http://127.0.0.1:5050/hotel-by-room/${room._id || room.roomId}`);
+        const res = await fetch(`https://backend-hotel-25mu.onrender.com/hotel-by-room/${room._id || room.roomId}`);
         const data = await res.json();
         if (res.ok && data.success && data.hotelName) {
           setHotelName(data.hotelName);
@@ -62,7 +62,7 @@ export default function BookingFormModal({ room, checkIn, checkOut, numRooms, on
         phone,
       };
 
-      const res = await fetch("http://127.0.0.1:5050/book-room", {
+      const res = await fetch("https://backend-hotel-25mu.onrender.com/book-room", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -88,7 +88,7 @@ export default function BookingFormModal({ room, checkIn, checkOut, numRooms, on
 
         // ✅ Save bill to backend
         try {
-          const billRes = await fetch("http://127.0.0.1:5050/add-bill", {
+          const billRes = await fetch("https://backend-hotel-25mu.onrender.com/add-bill", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(invoiceInfo),

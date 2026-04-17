@@ -23,7 +23,7 @@ export default function BookingPopup({ room, onClose, onAvailabilityChecked }) {
     setLoading(true);
 
     try {
-      const res = await fetch("http://127.0.0.1:5050/check-availability", {
+      const res = await fetch("https://backend-hotel-25mu.onrender.com/check-availability", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
