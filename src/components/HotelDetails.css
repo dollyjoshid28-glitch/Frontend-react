@@ -1,0 +1,243 @@
+.hdp-container {
+  font-family: "Poppins", sans-serif;
+  color: #1b263b;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* HEADER */
+.hdp-header {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+@media (min-width: 900px) {
+  .hdp-header {
+    flex-direction: row;
+  }
+}
+
+.hdp-image-wrapper {
+  flex: 1;
+}
+
+.hdp-main-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.hdp-info {
+  flex: 1;
+  padding: 30px;
+  position: relative;
+}
+
+.hdp-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hdp-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0d1b2a;
+}
+
+.hdp-check-btn {
+  background: #0d1b2a;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hdp-check-btn:hover {
+  background: #003580;
+}
+
+.hdp-rating {
+  margin: 10px 0;
+}
+
+.hdp-city {
+  font-weight: 600;
+  color: #415a77;
+}
+
+.hdp-desc {
+  color: #555;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.hdp-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #00a86b;
+  margin-top: 12px;
+}
+
+/* AMENITIES */
+.hdp-amenities {
+  margin-bottom: 40px;
+}
+
+.hdp-amenities h2 {
+  color: #0d1b2a;
+  margin-bottom: 10px;
+}
+
+.hdp-amenities-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hdp-amenity {
+  background: #eaf3ff;
+  border-radius: 8px;
+  padding: 8px 14px;
+  color: #0d1b2a;
+  font-weight: 500;
+  border: 1px solid #ccd9ff;
+}
+
+/* ROOMS */
+.hdp-room-title {
+  color: #0d1b2a;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hdp-rooms {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.hdp-room-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.hdp-room-card:hover {
+  transform: translateY(-4px);
+}
+
+@media (min-width: 900px) {
+  .hdp-room-card {
+    flex-direction: row;
+  }
+}
+
+.hdp-room-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+@media (min-width: 900px) {
+  .hdp-room-image {
+    width: 40%;
+    height: auto;
+  }
+}
+
+.hdp-room-info {
+  flex: 1;
+  padding: 20px;
+}
+
+.hdp-room-info h3 {
+  color: #0d1b2a;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.hdp-room-info p {
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.hdp-room-price {
+  color: #e49b0f;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.hdp-room-btn {
+  background: #0d1b2a;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  align-self: flex-end;
+  transition: background 0.3s ease;
+}
+
+.hdp-room-btn:hover {
+  background: #003580;
+}
+
+.hdp-no-rooms {
+  text-align: center;
+  color: #777;
+}
+
+.hdp-loading,
+.hdp-error {
+  text-align: center;
+  font-weight: 600;
+  padding: 40px;
+  color: #0d1b2a;
+}
+.hdp-room-info {
+  flex: 1;
+  padding: 20px;
+  position: relative;
+}
+
+.hdp-room-price {
+  color: #e49b0f;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.hdp-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hdp-room-btn {
+  background: #003580; /* Dark Blue */
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.hdp-room-btn:hover {
+  background: #00265a; /* slightly darker on hover */
+}

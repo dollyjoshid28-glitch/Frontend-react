@@ -1,0 +1,104 @@
+.hero {
+  background-image: url("/public/images/bg_img.jpg"); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-overlay {
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/* 🔹 Updated larger search box */
+.hero-searchbox {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 35px;
+  border-radius: 18px;
+  box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.25);
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero-form-group {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  min-width: 180px;
+}
+
+select,
+input[type="date"] {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-top: 6px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+select:focus,
+input[type="date"]:focus {
+  border-color: #0014b8;
+}
+
+/* 🔹 Dark blue button */
+.hero-search-btn {
+  background-color: #0014b8;
+  color: white;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: 0.25s;
+}
+
+.hero-search-btn:hover {
+  background-color: #000a70;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-searchbox {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .hero-form-group {
+    width: 100%;
+  }
+
+  .hero-search-btn {
+    width: 100%;
+  }
+}

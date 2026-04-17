@@ -1,0 +1,333 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 12px 50px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-logo a {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0014b8;
+  text-decoration: none;
+}
+
+.navbar-logo span {
+  color: black;
+}
+
+.navbar-links a {
+  margin-left: 25px;
+  color: #0014b8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+/* Common button style for both Login and Register */
+.login-btn,
+.register-btn {
+  background-color: #1e3a8a; /* deep blue */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 10px; /* spacing between buttons */
+}
+
+/* Hover effect for both */
+.login-btn:hover,
+.register-btn:hover {
+  background-color: #3b4a9a; /* lighter blue on hover */
+}
+
+.custom-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.custom-modal {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+.close-btn {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+  font-weight: bold;
+  z-index: 10;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.custom-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.custom-modal {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 400px;         /* modal width */
+  max-width: 90%;
+  height: auto;         /* adjust to form content only */
+  max-height: 90vh;     /* prevent overflowing screen */
+  overflow: visible;    /* remove extra scrollbars */
+  margin: auto;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links a {
+  margin-left: 25px;
+  color: #0014b8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+/* Profile dropdown styles */
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.profile-btn span {
+  margin-left: 6px;
+}
+
+.profile-btn:hover {
+  background-color: #3b4a9a;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 160px;
+  z-index: 1000;
+  padding: 5px 0;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #0014b8;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f3f4f6;
+}
+
+.dropdown-item.logout {
+  color: red;
+}
+.user-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 12px 50px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.user-navbar-logo a {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0014b8;
+  text-decoration: none;
+}
+
+.user-navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+}
+
+.user-navbar-links a {
+  color: #0014b8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.user-navbar-links a:hover {
+  text-decoration: underline;
+}
+
+/* Profile Circle */
+.profile-circle {
+  width: 38px;
+  height: 38px;
+  background-color: #1e3a8a;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.profile-circle:hover {
+  transform: scale(1.05);
+}
+
+/* Dropdown Menu */
+.profile-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  width: 180px;
+  padding: 10px 0;
+  animation: fadeIn 0.3s ease;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  font-weight: 600;
+  color: #0014b8;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 10px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #333;
+}
+
+.menu-item:hover {
+  background-color: #f3f4f6;
+}
+
+.menu-item.logout {
+  color: red;
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.navbar-links button {
+  margin-left: 10px;
+}
